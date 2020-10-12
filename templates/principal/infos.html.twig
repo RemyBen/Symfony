@@ -1,0 +1,7 @@
+{%  extends "base.html.twig" %}
+{% block title %}Tuto symfony{% endblock %}
+{% block body %}
+    <h1>Vous êtes né dans le département : {{ dep }}!</h1>
+    <h2>Vous êtes un {{ sexe }}!</h2>
+    <h2>nous somme le : {{ "now"|date('d/m/y') }}</h2>
+{% endblock %}
