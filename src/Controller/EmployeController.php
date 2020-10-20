@@ -10,6 +10,7 @@ namespace App\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 
 /**
  *@Route("/employe/", name="employe_")
@@ -24,6 +25,16 @@ class EmployeController extends AbstractController{
      */
     public function voir(int $id) {
         return $this->render('employe/voir.html.twig', ['id' => $id]);
+    }
+    
+    /**
+     * @Route("employeV2/{id}", name="voirV2")
+     * @param int $id
+     * @return type
+     * @Template("employe/voir.html.twig")
+     */
+    public function voirEmployeV2(int $id) {
+        return array('id'=>$id);        
     }
     
 }
