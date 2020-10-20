@@ -19,7 +19,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 class EmployeController extends AbstractController{
     
     /**
-     * @Route(path="employe/{id}", name="employe_voir")
+     * @Route(path="employe/{id}", name="employe_voir", defaults={"id":99}, requirements={"id"="\d+"})
      * @param int $id
      * @return type
      */
@@ -35,6 +35,16 @@ class EmployeController extends AbstractController{
      */
     public function voirEmployeV2(int $id) {
         return array('id'=>$id);        
+    }
+    
+    /**
+     * @Route(path="employe/{nom}", name="employe_voirNom")
+     * @param string $nom
+     * @return type
+     * @Template("employe/voirNom.html.twig")
+     */
+    public function voirNom (string $nom) {
+        return array('nom'=>$nom);
     }
     
 }
